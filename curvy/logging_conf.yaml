@@ -1,0 +1,22 @@
+version: 1
+disable_existing_loggers: True
+formatters:
+  colored:
+    (): coloredlogs.ColoredFormatter
+    datefmt: "%d-%b-%Y %H:%M:%S"
+    format: '%(asctime)s %(processName)s %(levelname)s: %(message)s'
+handlers:
+  console_handler:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: colored
+    stream: ext://sys.stdout
+
+loggers:
+  curvy:
+    level: DEBUG
+    handlers: [console_handler]
+    propagate: no
+root:
+  level: DEBUG
+  handlers: [console_handler]
