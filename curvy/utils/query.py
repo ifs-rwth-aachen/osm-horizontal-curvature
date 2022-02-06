@@ -1,3 +1,6 @@
+import overpy
+
+
 class QueryResult:
     def __init__(self, result: overpy.Result, railway_type: str):
         """ Class representing the Query Result

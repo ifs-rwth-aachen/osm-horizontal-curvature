@@ -1,6 +1,16 @@
 import itertools
+import logging
 import math
-from typing import List
+from typing import List, Tuple
+
+import numpy as np
+import overpy
+import pyproj
+
+from geopy.distance import geodesic
+from curvy.utils import generate_random_color
+
+logger = logging.getLogger(__name__)
 
 
 class OSMRelation:
@@ -267,6 +277,7 @@ class OSMRelation:
             return [[n.lat, n.lon] for n in self.nodes]
         else:
             return [[]]
+
 
 class OSMRailwayLine(OSMRelation):
     def __init__(self, id: int, ways: list, tags: dict, members: list):
