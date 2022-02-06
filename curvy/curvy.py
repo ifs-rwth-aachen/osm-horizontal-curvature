@@ -15,6 +15,8 @@ import pyproj
 from overpy import Result
 from tqdm.auto import tqdm
 
+from curvy.utils import QueryResult, internet
+from curvy.utils.osm import OSMRailwayLine
 
 logger = logging.getLogger(__name__)
 
@@ -33,10 +35,10 @@ class Curvy:
         else:
             if type(desired_railway_types) == list:
                 for desired in desired_railway_types:
-                    if desired not in OSM.supported_railway_types:
+                    if desired not in Curvy.supported_railway_types:
                         raise ValueError("Your desired railway type %s is not supported" % desired)
             elif type(desired_railway_types) == str:
-                if desired_railway_types not in OSM.supported_railway_types:
+                if desired_railway_types not in Curvy.supported_railway_types:
                     raise ValueError("Your desired railway type %s is not supported" % desired_railway_types)
             else:
                 raise ValueError("desired_railway_types must be list or str")
