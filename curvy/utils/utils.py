@@ -46,3 +46,19 @@ def generate_random_color(color_format: str = "RGB") -> Union[list, str]:
         return "#" + ''.join([random.choice('0123456789ABCDEF') for _ in range(6)])
     else:
         raise ValueError("Format %s is not valid, must be 'RGB' or 'HEX' " % color_format)
+
+
+def poly_quadratic(x: np.ndarray, a: float, b: float) -> np.ndarray:
+    """ Evaluates quadratric
+
+    Parameters
+    ----------
+    x
+    a
+    b
+
+    Returns
+    -------
+
+    """
+    return a * x ** 2 + b * x

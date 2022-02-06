@@ -8,7 +8,7 @@ import overpy
 import pyproj
 
 from geopy.distance import geodesic
-from curvy.utils import generate_random_color
+from curvy.utils import generate_random_color, poly_quadratic
 
 logger = logging.getLogger(__name__)
 
@@ -62,6 +62,16 @@ class OSMRelation:
             Flips the calculated curvature upside down
         """
         self.c = [el * -1 for el in self.c]
+
+    def get_error_bounds(self):
+        c = np.array(self.c)
+
+        error = poly_quadratic(c, 2.24, 0.15)
+
+        upper = c + error
+        lower = c - error
+
+        return lower, upper
 
     def stitch_ways_to_track(self):
         """

@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "osm-horizontal-curvature"
+name = "curvy"
 version = "0.1.0"
 description = "Library to retrieve OSM railway track data and calculate curvature"
 authors = ["Philipp Simon Leibner <philip.leibner@ifs.rwth-aachen.de>", "Tobias Bettinger <tobias.bettinger@ifs.rwth-aachen.de"]
@@ -13,6 +13,7 @@ numpy = "^1.22.2"
 pyproj = "^3.3.0"
 tqdm = "^4.62.3"
 geopy = "^2.2.0"
+matplotlib = "^3.5.1"
 
 [tool.poetry.dev-dependencies]
 
