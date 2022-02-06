@@ -2,10 +2,16 @@
 name = "osm-horizontal-curvature"
 version = "0.1.0"
 description = "Library to retrieve OSM railway track data and calculate curvature"
-authors = ["Philipp Simon Leibner <philip.leibner@rwth-aachen.de>"]
+authors = ["Philipp Simon Leibner <philip.leibner@ifs.rwth-aachen.de>", "Tobias Bettinger <tobias.bettinger@ifs.rwth-aachen.de"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.8, <3.10"
+pytest = "^7.0.0"
+networkx = "^2.6.3"
+overpy = "^0.6"
+numpy = "^1.22.2"
+pyproj = "^3.3.0"
+tqdm = "^4.62.3"
 
 [tool.poetry.dev-dependencies]
 
